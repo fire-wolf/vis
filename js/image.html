@@ -2,73 +2,63 @@
 <!doctype html>
 <html>
 <head>
-  <title>Network | Circular images</title>
+  <title>Network | Images</title>
 
   <style type="text/css">
-    body {
-      font: 10pt arial;
-    }
     #mynetwork {
-      width: 800px;
-      height: 800px;
+      width: 600px;
+      height: 600px;
       border: 1px solid lightgray;
-      background-color:#333333;
     }
   </style>
 
-   <script type="text/javascript" src="./vis.js"></script>
+ <script type="text/javascript" src="./vis.js"></script>
   <link href="./vis.css" rel="stylesheet" type="text/css" />
 
-  <script type="text/javascript"> 
-    var DIR = 'img/';
-
+  <script type="text/javascript">
     var nodes = null;
     var edges = null;
     var network = null;
 
+    var DIR = './img/';
+    var EDGE_LENGTH_MAIN = 150;
+    var EDGE_LENGTH_SUB = 50;
+
     // Called when the Visualization API is loaded.
     function draw() {
-      // create people.
-      // value corresponds with the age of the person
-      var DIR = 'img/';
-      nodes = [
-        {id: 1,  shape: 'circularImage', image: DIR + '1.png'},
-        {id: 2,  shape: 'circularImage', image: DIR + '2.png'},
-        {id: 3,  shape: 'circularImage', image: DIR + '3.png'},
-        {id: 4,  shape: 'circularImage', image: DIR + '4.png', label:"pictures by this guy!"},
-        {id: 5,  shape: 'circularImage', image: DIR + '5.png'},
-        {id: 6,  shape: 'circularImage', image: DIR + '6.png'},
-        {id: 7,  shape: 'circularImage', image: DIR + '7.png'},
-        {id: 8,  shape: 'circularImage', image: DIR + '8.png'},
-        {id: 9,  shape: 'circularImage', image: DIR + '9.png'},
-        {id: 10, shape: 'circularImage', image: DIR + '10.png'},
-        {id: 11, shape: 'circularImage', image: DIR + '11.png'},
-        {id: 12, shape: 'circularImage', image: DIR + '12.png'},
-        {id: 13, shape: 'circularImage', image: DIR + '13.png'},
-        {id: 14, shape: 'circularImage', image: DIR + '14.png'},
-        {id: 15, shape: 'circularImage', image: DIR + 'missing.png', brokenImage: DIR + 'missingBrokenImage.png', label:"when images\nfail\nto load"},
-        {id: 16, shape: 'circularImage', image: DIR + 'anotherMissing.png', brokenImage: DIR + '9.png', label:"fallback image in action"}
-      ];
+      // Create a data table with nodes.
+      nodes = [];
 
-      // create connections between people
-      // value corresponds with the amount of contact between two people
-      edges = [
-        {from: 1, to: 2},
-        {from: 2, to: 3},
-        {from: 2, to: 4},
-        {from: 4, to: 5},
-        {from: 4, to: 10},
-        {from: 4, to: 6},
-        {from: 6, to: 7},
-        {from: 7, to: 8},
-        {from: 8, to: 9},
-        {from: 8, to: 10},
-        {from: 10, to: 11},
-        {from: 11, to: 12},
-        {from: 12, to: 13},
-        {from: 13, to: 14},
-        {from: 9, to: 16}
-      ];
+      // Create a data table with links.
+      edges = [];
+
+      nodes.push({id: 1, label: 'Main', image: DIR + 'Network-Pipe-icon.png', shape: 'image'});
+      nodes.push({id: 2, label: 'Office', image: DIR + 'Network-Pipe-icon.png', shape: 'image'});
+      nodes.push({id: 3, label: 'Wireless', image: DIR + 'Network-Pipe-icon.png', shape: 'image'});
+      edges.push({from: 1, to: 2, length: EDGE_LENGTH_MAIN});
+      edges.push({from: 1, to: 3, length: EDGE_LENGTH_MAIN});
+
+      for (var i = 4; i <= 7; i++) {
+        nodes.push({id: i, label: 'Computer', image: DIR + 'Hardware-My-Computer-3-icon.png', shape: 'image'});
+        edges.push({from: 2, to: i, length: EDGE_LENGTH_SUB});
+      }
+
+      nodes.push({id: 101, label: 'Printer', image: DIR + 'Hardware-Printer-Blue-icon.png', shape: 'image'});
+      edges.push({from: 2, to: 101, length: EDGE_LENGTH_SUB});
+
+      nodes.push({id: 102, label: 'Laptop', image: DIR + 'Hardware-Laptop-1-icon.png', shape: 'image'});
+      edges.push({from: 3, to: 102, length: EDGE_LENGTH_SUB});
+
+      nodes.push({id: 103, label: 'network drive', image: DIR + 'Network-Drive-icon.png', shape: 'image'});
+      edges.push({from: 1, to: 103, length: EDGE_LENGTH_SUB});
+
+      nodes.push({id: 104, label: 'Internet', image: DIR + 'System-Firewall-2-icon.png', shape: 'image'});
+      edges.push({from: 1, to: 104, length: EDGE_LENGTH_SUB});
+
+      for (var i = 200; i <= 201; i++ ) {
+        nodes.push({id: i, label: 'Smartphone', image: DIR + 'Hardware-My-PDA-02-icon.png', shape: 'image'});
+        edges.push({from: 3, to: i, length: EDGE_LENGTH_SUB});
+      }
 
       // create a network
       var container = document.getElementById('mynetwork');
@@ -76,28 +66,18 @@
         nodes: nodes,
         edges: edges
       };
-      var options = {
-        nodes: {
-          borderWidth:4,
-          size:30,
-	      color: {
-            border: '#222222',
-            background: '#666666'
-          },
-          font:{color:'#333'}
-        },
-        edges: {
-          color: 'lightgray'
-        }
-      };
+      var options = {};
       network = new vis.Network(container, data, options);
     }
   </script>
   
-</head>
 
 <body onload="draw()">
 
+<p>
+ 节点显示图片
+</p>
 <div id="mynetwork"></div>
+
 </body>
 </html>

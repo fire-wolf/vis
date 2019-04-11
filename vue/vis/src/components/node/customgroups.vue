@@ -2,7 +2,7 @@
 	<div class="customgroups">
 		<p style="text-align:left;padding:10px;">
 		</p>
-		  <div ref="visualization" id='netWork'></div>
+		  <div ref="visualization" id='netWork' style="background:#222222;"></div>
 	</div>
 </template>
 <script >

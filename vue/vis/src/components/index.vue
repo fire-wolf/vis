@@ -64,5 +64,8 @@ export default{
 	    height: 400px;
 	    border: 1px solid lightgray;
 	}
-	
+	p{
+    padding:10px;
+    text-align:left;
+  }
 </style>

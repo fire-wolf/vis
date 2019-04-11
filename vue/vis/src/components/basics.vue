@@ -6,12 +6,10 @@
 	</div>
 </template>
 <script> 
-	import { DataSet, DataView, Network } from 'vis';
-	import { mountVisData, translateEvent } from '@/assets/js/utils/visData';
+	import { Network } from 'vis';
+	import { mountVisData } from '@/assets/js/utils/visData';
 	export default{
-		components:{
-			Network
-		},
+		 
 		data(){
 			return{ 
 				nodes:[

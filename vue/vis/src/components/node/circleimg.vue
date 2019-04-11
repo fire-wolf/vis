@@ -28,7 +28,7 @@ export default{
 			        {id: 12, shape: 'circularImage', image: '/static/image/12.png'},
 			        {id: 13, shape: 'circularImage', image: '/static/image/13.png'},
 			        {id: 14, shape: 'circularImage', image: '/static/image/14.png'},
-			        {id: 15, shape: 'circularImage', image: '/static/image/missing.png', brokenImage: '/static/image/missingBrokenImage.png', label:"when images\nfail\nto load"},
+			        {id: 15, shape: 'circularImage', image: '/static/image/missing.png', brokenImage: '/static/image/11.png', label:"when images\nfail\nto load"},
 			        {id: 16, shape: 'circularImage', image: '/static/image/anotherMissing.png', brokenImage: '/static/image/9.png', label:"fallback image in action"}
 				],
 				edges:[
