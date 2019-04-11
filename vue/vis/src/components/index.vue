@@ -57,4 +57,12 @@ export default{
 </script>
 <style type="text/css" >
 	.el-submenu .el-menu-item{height:40px; line-height: 40px;}
+
+	#netWork{
+    margin:10px;
+		width: 600px;
+	    height: 400px;
+	    border: 1px solid lightgray;
+	}
+	
 </style>
