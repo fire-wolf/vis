@@ -6,6 +6,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 import mockData from '@/assets/js/mock/index'
 
+
+
 Vue.use(Element)
 
 Vue.config.productionTip = false

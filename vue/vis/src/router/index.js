@@ -10,6 +10,7 @@ export default new Router({
         path: '/',name: 'index',component: resolve=>(require(['@/components/index'],resolve)),
         children:[
             {path: '/basics',name: 'basics',component: resolve=>(require(['@/components/basics'],resolve))},
+            {path: '/basics1',name: 'basics1',component: resolve=>(require(['@/components/basics1'],resolve))},
             {path:'/node',name:'node',component:() => import('@/components/node')},
             {path: '/circleimg',name: 'circleimg',component: resolve=>(require(['@/components/node/circleimg'],resolve))},
             {path: '/color',name: 'color',component: resolve=>(require(['@/components/node/color'],resolve))},

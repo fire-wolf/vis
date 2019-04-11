@@ -1,5 +1,11 @@
 export const menuList = [
-	{id:1,label:'基础实现',url:'/basics',icon:'el-icon-menu'},
+	{
+		id:1,label:'基础实现',url:'/basics',icon:'el-icon-menu',
+		children:[
+			{id:101,label:'vis组件',url:'/basics'},
+			{id:102,label:'vue2vis组件',url:'/basics1'},
+		]
+	},
 	{
 		id:2,label:'节点样式',url:'/node',icon:'el-icon-menu',
 		children:[
