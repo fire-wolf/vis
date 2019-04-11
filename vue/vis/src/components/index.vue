@@ -68,4 +68,5 @@ export default{
     padding:10px;
     text-align:left;
   }
+  .el-container{overflow:auto;}
 </style>
