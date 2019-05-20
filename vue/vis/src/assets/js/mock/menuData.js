@@ -23,5 +23,14 @@ export const menuList = [
 			{id:212,label:'节点宽高',url:'/widthOrheight'}
 		]
 	},
-	{id:3,label:'关联样式',url:'/edge',icon:'el-icon-menu'}
+	{
+		id:3,label:'关联样式',url:'/edge',icon:'el-icon-menu',
+		children:[
+			{id:301,label:'样式',url:'/arrows'},
+			{id:302,label:'类型',url:'/edgeType'},
+			{id:302,label:'颜色',url:'/edgeColor'},
+			{id:302,label:'dashes',url:'/edgeDashes'},
+			{id:302,label:'光滑曲线',url:'/edgeSmooth'},
+		]
+	}
 ]

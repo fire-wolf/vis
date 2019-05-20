@@ -24,7 +24,12 @@ export default new Router({
             {path: '/imgOrborder',name: 'imgOrborder',component: resolve=>(require(['@/components/node/imgOrborder'],resolve))},
             {path: '/dashedOrborder',name: 'dashedOrborder',component: resolve=>(require(['@/components/node/dashedOrborder'],resolve))},
             {path: '/widthOrheight',name: 'widthOrheight',component: resolve=>(require(['@/components/node/widthOrheight'],resolve))},
-            {path:'/edge',name:'edge',component:() => import('@/components/edge')}
+            {path:'/edge',name:'edge',component:() => import('@/components/edge')},
+            {path:'/arrows',name:'arrows',component:() => import('@/components/edge/arrows')},
+            {path:'/edgeType',name:'edgeType',component:() => import('@/components/edge/type')},
+            {path:'/edgeColor',name:'edgeColor',component:() => import('@/components/edge/color')},
+            {path:'/edgeDashes',name:'edgeDashes',component:() => import('@/components/edge/dashes')},
+            {path:'/edgeSmooth',name:'edgeSmooth',component:() => import('@/components/edge/smooth')},
         ]
 
     } 
