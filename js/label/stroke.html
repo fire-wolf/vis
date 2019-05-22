@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>Network | Basic usage</title>
+
+  <script type="text/javascript" src="../vis.js"></script>
+  <link href="../vis.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    #mynetwork {
+      width: 600px;
+      height: 400px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+<body>
+
+<p> 
+标签的笔画完全可以有宽度和颜色。默认情况下，为了清晰起见，EdgeLabel有一个白色的笔画。
+</p>
+
+<div id="mynetwork"></div>
+
+<script type="text/javascript">
+  // create an array with nodes
+  var nodes = new vis.DataSet([
+    {id: 1, label: 'Node 1', font: {strokeWidth: 3, strokeColor: 'white'}},
+    {id: 2, label: 'Node 2'},
+    {id: 3, label: 'Node 3'},
+    {id: 4, label: 'Node 4'},
+    {id: 5, label: 'Node 5'}
+  ]);
+
+  // create an array with edges
+  var edges = new vis.DataSet([
+   {from: 1, to: 2, label: 'edgeLabel', font: {strokeWidth: 2, strokeColor : '#00ff00'}},
+    {from: 1, to: 3, label: 'edgeLabel'},
+    {from: 2, to: 4},
+    {from: 2, to: 5}
+  ]);
+
+
+  // create a network
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {
+    
+    nodes : {
+      shape: 'dot',
+      size: 10
+    }
+  };
+  var network = new vis.Network(container, data, options);
+</script>
+
+
+</body>
+</html>

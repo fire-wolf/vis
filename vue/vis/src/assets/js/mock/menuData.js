@@ -32,5 +32,16 @@ export const menuList = [
 			{id:302,label:'dashes',url:'/edgeDashes'},
 			{id:302,label:'光滑曲线',url:'/edgeSmooth'},
 		]
+	},
+	{
+		id:3,label:'文本样式',url:'/label',icon:'el-icon-menu',
+		children:[
+			{id:301,label:'位置及事件',url:'/labelAlignment'},
+			{id:302,label:'背景',url:'/labelBackground'},
+			{id:302,label:'颜色及大小',url:'/labelColorAndSize'},
+			{id:302,label:'边距',url:'/labelMargin'},
+			{id:302,label:'关联标签样式',url:'/labelStroke'},
+			{id:302,label:'多线',url:'/labelMultiline'},
+		]
 	}
 ]

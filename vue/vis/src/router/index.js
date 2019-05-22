@@ -30,6 +30,12 @@ export default new Router({
             {path:'/edgeColor',name:'edgeColor',component:() => import('@/components/edge/color')},
             {path:'/edgeDashes',name:'edgeDashes',component:() => import('@/components/edge/dashes')},
             {path:'/edgeSmooth',name:'edgeSmooth',component:() => import('@/components/edge/smooth')},
+            {path:'/labelAlignment',name:'labelAlignment',component:() => import('@/components/label/labelAlignment')},
+            {path:'/labelBackground',name:'labelBackground',component:() => import('@/components/label/background')},
+            {path:'/labelColorAndSize',name:'labelColorAndSize',component:() => import('@/components/label/colorAndSize')},
+            {path:'/labelMargin',name:'labelMargin',component:() => import('@/components/label/margin')},
+            {path:'/labelStroke',name:'labelStroke',component:() => import('@/components/label/stroke')},
+            {path:'/labelMultiline',name:'labelMultiline',component:() => import('@/components/label/multiline')},
         ]
 
     } 
