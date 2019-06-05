@@ -20,7 +20,7 @@
   <link href="../vis.css" rel="stylesheet" type="text/css" />
 
   <script type="text/javascript"> 
-    var DIR = 'img/';
+    var DIR = '../img/';
 
     var nodes = null;
     var edges = null;
@@ -30,7 +30,7 @@
     function draw() {
       // create people.
       // value corresponds with the age of the person
-      var DIR = 'img/';
+      var DIR = '../img/';
       nodes = [
         {id: 1,  shape: 'circularImage', image: DIR + '1.png'},
         {id: 2,  shape: 'circularImage', image: DIR + '2.png'},
@@ -46,8 +46,9 @@
         {id: 12, shape: 'circularImage', image: DIR + '12.png'},
         {id: 13, shape: 'circularImage', image: DIR + '13.png'},
         {id: 14, shape: 'circularImage', image: DIR + '14.png'},
-        {id: 15, shape: 'circularImage', image: DIR + 'missing.png', brokenImage: DIR + 'missingBrokenImage.png', label:"when images\nfail\nto load"},
-        {id: 16, shape: 'circularImage', image: DIR + 'anotherMissing.png', brokenImage: DIR + '9.png', label:"fallback image in action"}
+        //{id: 15, shape: 'circularImage', image: DIR + 'missing.png', brokenImage: DIR + 'missingBrokenImage.png', label:"when images\nfail\nto load"},
+        {id: 16, shape: 'circularImage', image: DIR + 'anotherMissing.png', brokenImage: DIR + '9.png', label:"fallback image in action"},
+        {id:17,'shape': 'circle','size':'30','borderWidth':'5','color':'#fff','label':'17'}
       ];
 
       // create connections between people
@@ -84,7 +85,7 @@
             border: '#222222',
             background: '#666666'
           },
-          font:{color:'#333'}
+          font:{color:'#fff'}
         },
         edges: {
           color: 'lightgray'
