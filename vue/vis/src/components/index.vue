@@ -46,16 +46,21 @@ export default{
 	  },
 	  created(){
 	    let _this = this;
-	    menu.getMenuList().then((res)=>{
-	      if(res.success){
-	        _this.menuList = res.data;
-          console.log('menuList',_this.menuList);
-          if(_this.$router.options.routes[0].children.length==0){
-            this.addRouteFun(_this.menuList,_this.$router);  
-          }
-          
-	      } 
-	    })
+      if(!sessionStorage.getItem('routes')){
+        menu.getMenuList().then((res)=>{
+          if(res.success){
+            _this.menuList = res.data;
+            console.log('menuList',_this.menuList);
+            if(_this.$router.options.routes[0].children.length==0){
+              this.addRouteFun(_this.menuList,_this.$router);  
+            }
+            
+          } 
+        })  
+      }else{
+        _this.menuList = JSON.parse(sessionStorage.getItem('routes'));
+      }
+	    
 	  }
 }
 </script>
