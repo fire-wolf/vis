@@ -44,12 +44,16 @@ export default{
 	      menuList:null
 	    }
 	  },
-	  mounted(){
+	  created(){
 	    let _this = this;
 	    menu.getMenuList().then((res)=>{
 	      if(res.success){
 	        _this.menuList = res.data;
-
+          console.log('menuList',_this.menuList);
+          if(_this.$router.options.routes[0].children.length==0){
+            this.addRouteFun(_this.menuList,_this.$router);  
+          }
+          
 	      } 
 	    })
 	  }

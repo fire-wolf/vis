@@ -27,32 +27,29 @@ export const menuList = [
 		id:3,label:'关联样式',url:'/edge',icon:'el-icon-menu',
 		children:[
 			{id:301,label:'样式',url:'/arrows'},
-			{id:302,label:'类型',url:'/edgeType'},
-			{id:303,label:'颜色',url:'/edgeColor'},
-			{id:304,label:'dashes',url:'/edgeDashes'},
-			{id:305,label:'光滑曲线',url:'/edgeSmooth'},
+			{id:302,label:'类型',url:'/type'},
+			{id:303,label:'颜色',url:'/edgecolor'},
+			{id:304,label:'dashes',url:'/dashes'},
+			{id:305,label:'光滑曲线',url:'/smooth'},
 		]
 	},
 	{
 		id:4,label:'文本样式',url:'/label',icon:'el-icon-menu',
 		children:[
 			{id:401,label:'位置及事件',url:'/labelAlignment'},
-			{id:402,label:'背景',url:'/labelBackground'},
-			{id:403,label:'颜色及大小',url:'/labelColorAndSize'},
-			{id:404,label:'边距',url:'/labelMargin'},
-			{id:405,label:'关联标签样式',url:'/labelStroke'},
-			{id:406,label:'多线',url:'/labelMultiline'},
+			{id:402,label:'背景',url:'/background'},
+			{id:403,label:'颜色及大小',url:'/colorAndSize'},
+			{id:404,label:'边距',url:'/margin'},
+			{id:405,label:'关联标签样式',url:'/stroke'},
+			{id:406,label:'多线',url:'/multiline'},
 		]
 	},
 	{
-		id:5,label:'布局',url:'/layout',icon:'el-icon-menu',
+		id:5,label:'布局样式',url:'/layout',icon:'el-icon-menu',
 		children:[
-			{id:501,label:'位置及事件',url:'/layout1'},
-			{id:502,label:'背景',url:'/labelBackground'},
-			{id:503,label:'颜色及大小',url:'/labelColorAndSize'},
-			{id:504,label:'边距',url:'/labelMargin'},
-			{id:505,label:'关联标签样式',url:'/labelStroke'},
-			{id:506,label:'多线',url:'/labelMultiline'},
+			{id:501,label:'布局1',url:'/layout1'},
+			{id:502,label:'布局2',url:'/layout2'}, 
+			{id:502,label:'布局3',url:'/layout3'}, 
 		]
 	}
 ]

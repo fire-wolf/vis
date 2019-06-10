@@ -1,0 +1,90 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>Network | Basic usage</title>
+<script type="text/javascript" src="../data.js"></script>
+  <script type="text/javascript" src="../vis.js"></script>
+  
+  <link href="../vis.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    #mynetwork {
+      width: 600px;
+      height: 400px;
+      border: 1px solid lightgray;
+    }
+    p {
+      max-width:600px;
+    }
+  </style>
+</head>
+<body  >
+
+<p>现在可以不用物理来控制分层布局。这要快得多。此选项包括：</p> 
+<table>
+    <tr>
+        <td>levelSeparation</td>
+        <td>两层之间的距离。</td>
+    </tr>
+    <tr>
+        <td>nodeSpacing</td>
+        <td>自由轴上节点之间的最小距离。</td>
+    </tr>
+    <tr>
+        <td>treeSpacing</td>
+        <td>不同树之间的距离（独立网络）。</td>
+    </tr>
+    <tr>
+        <td>blockShifting</td>
+        <td>减少空白的方法。可单独使用或与边缘最小化一起使用。每个节点将检查空白，并将尽可能地移动它的分支，尊重任何级别的节点定位。</td>
+    </tr>
+    <tr>
+        <td>edgeMinimization</td>
+        <td>减少空白的方法。可单独使用或与块移位一起使用。启用块移动通常会加快布局过程。每个节点将尝试沿着其自由轴移动，以减少其边缘的总长度。</td>
+    </tr>
+    <tr>
+        <td>parentCentralization</td>
+        <td>如果为true，则布局算法完成后，父节点将再次居中。</td>
+    </tr>
+</table>
+<p>使用网络下面项进行设置，并查看布局如何更改！</p> 
+
+<div id="mynetwork"></div>
+ 
+
+<script type="text/javascript">
+    var data = {
+        nodes: nodes,
+        edges: edges
+    };
+    // create a network
+    var container = document.getElementById('mynetwork');
+    var options = {
+        layout: {
+            hierarchical: {
+                direction: "UD",
+                sortMethod: "directed"
+            }
+        },
+        interaction: {dragNodes :false},
+        physics: {
+            enabled: false
+        },
+        configure: {
+          filter: function (option, path) {
+              if (path.indexOf('hierarchical') !== -1) {
+                  return true;
+              }
+              return false;
+          },
+          showButton:true
+        }
+    };
+    var network = new vis.Network(container, data, options);
+
+</script>
+
+
+</body>
+</html>
